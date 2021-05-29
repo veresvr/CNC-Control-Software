@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pic/new_document.svg</file>
+        <file>pic/logo.svg</file>
+    </qresource>
+    <qresource prefix="/settings">
+        <file>pic/12.svg</file>
+    </qresource>
+    <qresource prefix="/mainWindow"/>
+</RCC>
