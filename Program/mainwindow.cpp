@@ -18,6 +18,7 @@
 #include <qdebug.h>
 #include <QtDebug>
 #include <QMenu>
+#include <veres_defines_list.h>
 //#include <QSettings>
 
 // file types
@@ -693,10 +694,16 @@ void MainWindow::on_pushButton_4_clicked()
 
 void MainWindow::on_AddCodeButton_clicked()
 {
-    QString temp = ui->CodeLineEdit->text();
-    ui->ProgrammCNC->append(temp);
+//    QString temp = ui->CodeLineEdit->text();
+//    ui->ProgrammCNC->append(temp);
     //here must be check for wrong type
     // writeData(temp);
+
+    QByteArray data; // Текстовая переменная
+    data = ui->CodeLineEdit->text().toLocal8Bit() + '\r'; // Присвоение "data" значения из EnterText
+    writeData(data); // Отправка данных в порт
+    Print(data); // Вывод данных в консоль
+    qDebug("show sending data");
 
     ui->CodeLineEdit->clear();
     ui->CodeLineEdit->setFocus();
@@ -731,6 +738,16 @@ void MainWindow::on_toNegativeAxisZ_clicked()
 }
 
 void MainWindow::on_toPositiveAxisZ_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+
+}
+
+void MainWindow::on_toZeroOnZ_clicked()
 {
 
 }
