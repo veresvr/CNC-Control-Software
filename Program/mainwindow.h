@@ -82,6 +82,12 @@ private slots:
 
     void on_toZeroOnZ_clicked();
 
+    void on_pushButton_7_clicked();
+
+    void on_pushButtonGOTO_clicked();
+
+    void on_toPositiveAxisY_clicked();
+
 private:
     Ui::MainWindow *ui;
     Port PortNew;

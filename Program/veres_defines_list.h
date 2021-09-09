@@ -37,3 +37,16 @@
 #define MOV_CARRIAGE_AT_Z_FREE 50
 #define MOV_CARRIAGE_AT_Z_WORK 51
 #define SHPINDLE_MODE					26
+#define GOTO_COMMAND                            52
+
+// GOTO variants
+#define NONE                                    0
+#define GOTO_HOME                               1
+#define GOTO_LOCAL_ZERO                         2
+#define GOTO_X_PLUS                             3
+#define GOTO_X_MINUS                            4
+#define GOTO_Y_PLUS                             5
+#define GOTO_Y_MINUS                            6
+#define GOTO_Z_PLUS                             7
+#define GOTO_Z_MINUS                            8
+

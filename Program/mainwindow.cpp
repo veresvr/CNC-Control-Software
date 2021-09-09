@@ -751,3 +751,34 @@ void MainWindow::on_toZeroOnZ_clicked()
 {
 
 }
+
+
+void MainWindow::on_pushButtonGOTO_clicked()
+{
+    if (ui->comboBoxGOTO->currentIndex() != NONE){
+        uint8_t arr[OUT_ARR_SIZE] = {'[',
+                                     GOTO_COMMAND,
+                                     (uint8_t)(ui->comboBoxGOTO->currentIndex()),
+                                     0x77,
+                                     ']' };
+
+        writeData(QByteArray((char*)arr,5));
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+void MainWindow::on_toPositiveAxisY_clicked()
+{
+
+}
