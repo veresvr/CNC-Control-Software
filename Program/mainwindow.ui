@@ -669,6 +669,9 @@ p, li { white-space: pre-wrap; }
        <height>22</height>
       </rect>
      </property>
+     <property name="decimals">
+      <number>3</number>
+     </property>
     </widget>
     <widget class="QRadioButton" name="radioButtonToLenght">
      <property name="geometry">
@@ -704,6 +707,9 @@ p, li { white-space: pre-wrap; }
        <width>131</width>
        <height>22</height>
       </rect>
+     </property>
+     <property name="maximum">
+      <number>65535</number>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButtonGOTO">

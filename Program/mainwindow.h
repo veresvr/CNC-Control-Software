@@ -88,6 +88,8 @@ private slots:
 
     void on_toPositiveAxisY_clicked();
 
+    void on_toPositiveAxisX_clicked();
+
 private:
     Ui::MainWindow *ui;
     Port PortNew;

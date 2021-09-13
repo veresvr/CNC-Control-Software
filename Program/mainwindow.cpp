@@ -764,6 +764,7 @@ void MainWindow::on_pushButtonGOTO_clicked()
 
         writeData(QByteArray((char*)arr,5));
         ui->comboBoxGOTO->setCurrentIndex(NONE);
+        // here must be a log code
     }
 }
 
@@ -771,3 +772,26 @@ void MainWindow::on_toPositiveAxisY_clicked()
 {
 
 }
+
+void MainWindow::on_toPositiveAxisX_clicked()
+{
+    uint32_t steps = 0;
+// prepare the steps
+    if(ui->radioButtonToSteps->isChecked()){
+        steps = ui->spinBoxStepsValue->value();
+    }else{
+        steps = std::round(ui->SpinBoxLenghtValue->value() / 0.12);  // lenght to the steps value
+    }
+
+    if(steps < UINT16_MAX){
+        uint8_t arr[OUT_ARR_SIZE] = {'[',
+                                    MOV_STEPS_X_PLUS,
+                                    (uint8_t)(steps >> 8),   // high part first
+                                    (uint8_t)(steps),
+                                    0x77,
+                                    ']' };
+        writeData(QByteArray((char*)arr,6));
+        qDebug("OK");
+    }else qDebug("error: value too much high");
+}
+
