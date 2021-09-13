@@ -38,6 +38,7 @@
 #define MOV_CARRIAGE_AT_Z_WORK 51
 #define SHPINDLE_MODE					26
 #define GOTO_COMMAND                            52
+#define END_SENSORS_STATUS		53
 
 // GOTO variants
 #define NONE                                    0

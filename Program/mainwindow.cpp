@@ -763,20 +763,9 @@ void MainWindow::on_pushButtonGOTO_clicked()
                                      ']' };
 
         writeData(QByteArray((char*)arr,5));
-
+        ui->comboBoxGOTO->setCurrentIndex(NONE);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 void MainWindow::on_toPositiveAxisY_clicked()
 {
