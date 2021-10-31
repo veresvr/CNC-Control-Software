@@ -796,6 +796,31 @@ p, li { white-space: pre-wrap; }
       <string>OK!</string>
      </property>
     </widget>
+    <widget class="QLabel" name="labelCoordinatesInfo">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>70</y>
+       <width>20</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Source Serif Pro Black</family>
+       <pointsize>18</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+       <underline>false</underline>
+      </font>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'SFMono-Regular','Menlo','Monaco','Consolas','Liberation Mono','Courier New','monospace'; font-size:18px; color:#000000;&quot;&gt;•&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::RichText</enum>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBoxShpindle">
     <property name="geometry">
@@ -1688,7 +1713,7 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>C:/Users/veres/Desktop/img/litle_img/open1.png</normaloff>C:/Users/veres/Desktop/img/litle_img/open1.png</iconset>
+       <normaloff>:/pic/new_document.svg</normaloff>:/pic/new_document.svg</iconset>
      </property>
      <addaction name="actionExcellon"/>
      <addaction name="actionGerber_RS247X"/>

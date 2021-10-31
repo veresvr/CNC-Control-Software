@@ -141,20 +141,20 @@ MainWindow::MainWindow(QWidget *parent) :
     PortNew->SettingsPort.flowControl = QSerialPort::NoFlowControl;
 
 
-    PortNew->moveToThread(thread_New);      //помешаем класс  в поток
-    PortNew->thisPort.moveToThread(thread_New);     //Помещаем сам порт в поток
+    PortNew->moveToThread(thread_New);                                          //помешаем класс  в поток
+    PortNew->thisPort.moveToThread(thread_New);                                 //Помещаем сам порт в поток
     connect(PortNew, SIGNAL(error_(QString)), this, SLOT(Print(QString)));      //Лог ошибок
     connect(thread_New, SIGNAL(started()), PortNew, SLOT(process_Port()));      //Переназначения метода run
     connect(PortNew, SIGNAL(finished_Port()), thread_New, SLOT(quit()));        //Переназначение метода выход
     connect(thread_New, SIGNAL(finished()), PortNew, SLOT(deleteLater()));      //Удалить к чертям поток
     connect(PortNew, SIGNAL(finished_Port()), thread_New, SLOT(deleteLater()));     //Удалить к чертям поток
-    connect(this,SIGNAL(savesettings(QString,int,int,int,int,int)),PortNew,SLOT(Write_Settings_Port(QString,int,int,int,int,int)));//Слот - ввод настроек!
+    connect(this,SIGNAL(savesettings(QString,int,int,int,int,int)),PortNew,SLOT(Write_Settings_Port(QString,int,int,int,int,int))); //Слот - ввод настроек!
     connect(ui->BtnConnect, SIGNAL(clicked()),PortNew,SLOT(ConnectPort()));
     connect(ui->BtnDisconect, SIGNAL(clicked()),PortNew,SLOT(DisconnectPort()));
-    connect(PortNew, SIGNAL(outPort(QString)), this, SLOT(Print(QString)));     //Лог ошибок
+    connect(PortNew, SIGNAL(outPort(QString)), this, SLOT(Print(QString)));                                 //Лог ошибок
     connect(this,SIGNAL(writeData(QByteArray)),PortNew,SLOT(WriteToPort(QByteArray)));
-    connect(ui->menuBar, SIGNAL(actionOpen_programm()), this, SLOT(openProgramm()));        // open .txt file to load a code
-    connect(ui->menuSettings, SIGNAL(triggered(bool)), this, SLOT(showSettingsWindow()));     // show window with settings
+    connect(ui->menuBar, SIGNAL(actionOpen_programm()), this, SLOT(openProgramm()));                        // open .txt file to load a code
+    connect(ui->menuSettings, SIGNAL(triggered(bool)), this, SLOT(showSettingsWindow()));                   // show window with settings
     connect(ui->actionMake_firmware, SIGNAL(triggered(bool)), this, SLOT(showMakeFirmwareWindow()));
 
     connect(ui->actionExcellon, SIGNAL(triggered(bool)), this, SLOT(loadProgrammFile()));
@@ -217,7 +217,7 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
 
-    delete ui; //Удаление формы
+    delete ui;              //Удаление формы
 }
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

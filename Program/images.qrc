@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/">
+    <qresource prefix="/menuBar">
         <file>pic/new_document.svg</file>
         <file>pic/logo.svg</file>
     </qresource>
