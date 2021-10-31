@@ -1694,6 +1694,7 @@ p, li { white-space: pre-wrap; }
      <addaction name="actionGerber_RS247X"/>
      <addaction name="actionPNG"/>
      <addaction name="actionDXF"/>
+     <addaction name="actionGcode"/>
     </widget>
     <addaction name="menuOpen"/>
     <addaction name="menuClose"/>
@@ -1796,6 +1797,11 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="text">
     <string>Make firmware</string>
+   </property>
+  </action>
+  <action name="actionGcode">
+   <property name="text">
+    <string>G-code</string>
    </property>
   </action>
  </widget>

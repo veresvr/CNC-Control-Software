@@ -25,6 +25,7 @@
 #define NO_FILE     0
 #define EXCELLON_F  1
 #define DXF_F       2
+#define GCODE_F     3
 #define OUT_ARR_SIZE    15
 
 
@@ -160,6 +161,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionExcellon, SIGNAL(triggered(bool)), this, SLOT(actionExcellonWasClicked()));
     connect(ui->actionDXF, SIGNAL(triggered(bool)), this, SLOT(loadProgrammFile()));
     connect(ui->actionDXF, SIGNAL(triggered(bool)), this, SLOT(actionDXFWasClicked()));
+    connect(ui->actionGcode, SIGNAL(triggered(bool)), this, SLOT(loadProgrammFile()));
 
     connect(ui->actionAutors, SIGNAL(triggered(bool)), this, SLOT(aboutWindow()));
     connect(ui->menuClose, SIGNAL(triggered(bool)), this, SLOT(closeProgrammFile()));
@@ -280,6 +282,18 @@ void MainWindow::loadProgrammFile()
 //        qDebug("loadProgrammFile():  codeFileType =  DXF_F");
     }
 
+    if (QObject::sender()->objectName() == "actionGcode")             // this "QObject::sender()->objectName()"
+    {                                                               //  needs for know who send signal to these function
+        fileNameStr = "Open G-code programm file";
+        fileTypeStr = "G-code files (*.txt)";
+        codeFileType = GCODE_F;
+//        qDebug("loadProgrammFile():  codeFileType =  DXF_F");
+    }
+
+
+
+
+
     str = QFileDialog::getOpenFileName(this,                                    // search the file what u need
                                                tr(fileNameStr.toLocal8Bit()),   // header of the window
                                                defaultDirectory,                // directory, contains these programm
@@ -297,7 +311,7 @@ void MainWindow::loadProgrammFile()
     }
 
     ui->pathOfProgramm->setText(str);
-    defaultDirectory = str;                             // change default dir for ease to use
+    defaultDirectory = str;                             // change default dir for easy to use
     codeData.setDevice(&programmCNC);
 
     ui->ProgrammCNC->setText(codeData.readAll());
@@ -367,7 +381,7 @@ void MainWindow::aboutWindow()
 uint8_t MainWindow::calculateCRC(uint8_t *pcBlock, uint32_t len)     // func from wikipedia
 {   // func receive uint8_t array of data and lenght of this data (count will start from 1!)
     uint8_t crc = 0;//0xFF;
-    uint32_t i;
+    uint8_t i;
 
     while (len--)
     {
