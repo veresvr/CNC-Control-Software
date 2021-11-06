@@ -19,6 +19,7 @@
 #include <QtDebug>
 #include <QMenu>
 #include <veres_defines_list.h>
+#include <filesparsing.h>
 //#include <QSettings>
 
 // file types
@@ -546,9 +547,12 @@ void MainWindow::on_CheckCodeButton_clicked()
         double  axisValueX = 0,
                 axisValueY = 0,
                 toolDiam = 0;
+
         for (currentLine = 0; currentLine < strList.size(); currentLine++)                  // look all lines at loaded programm
         {
             QString str = strList.at(currentLine);                                          // making sring from stringList
+
+            excellonparsing(strList.at(currentLine));
 
                 if (str.toStdString()[0] == '%')                                            // search for '%'
                 {
@@ -662,6 +666,10 @@ void MainWindow::on_CheckCodeButton_clicked()
 
     }
 
+    if (codeFileType == GCODE_F)
+    {
+gcodeparsing(strList.at(currentLine));
+    }
 }
 
 void MainWindow::on_pushButton_3_clicked()      // тут мы переводим число из инчей в милиметры

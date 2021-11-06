@@ -14,12 +14,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    filesparsing.cpp \
         mainwindow.cpp \
     port.cpp \
     settingscom.cpp \
     firmware.cpp
 
 HEADERS  += mainwindow.h \
+    filesparsing.h \
     port.h \
     settingscom.h \
     firmware.h
