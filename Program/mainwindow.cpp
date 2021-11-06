@@ -70,7 +70,6 @@ QString SOUND_programmEND = "TRUE",
 //settings->setValue("AXIS/slowMove", 2);
 
 
-
 //___________________________________________________________
 // main code
 MainWindow::MainWindow(QWidget *parent) :
@@ -212,7 +211,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
-
+    ui->RunButton->setEnabled(FALSE);
 }
 //++++++++[Процедура закрытия приложения]+++++++++++++++++++++++++++++++++++++++++++++
 MainWindow::~MainWindow()
@@ -232,7 +231,7 @@ void MainWindow::showMakeFirmwareWindow()
     firmwareForm->show();
 }
 
-//++++++++[Процедура пределения подключенных портов]+++++++++++++++++++++++++++++++++++
+//++++++++[Процедура определения подключенных портов]+++++++++++++++++++++++++++++++++++
 void MainWindow::on_Btn_Serch_clicked()
 {
     ui->PortNameBox->clear();
@@ -308,15 +307,17 @@ void MainWindow::loadProgrammFile()
             QMessageBox::information(0, "Info", programmCNC.errorString());     // in another case...
 
         codeFileType = NO_FILE;
+        ui->RunButton->setEnabled(FALSE);
         return;
     }
 
     ui->pathOfProgramm->setText(str);
+    ui->pathOfProgramm->setToolTip(str);
     defaultDirectory = str;                             // change default dir for easy to use
     codeData.setDevice(&programmCNC);
 
     ui->ProgrammCNC->setText(codeData.readAll());
-
+    ui->RunButton->setEnabled(TRUE);
 //    programmCNC.close();    // needs close after end of work! not in that function!
 }
 
@@ -324,9 +325,11 @@ void MainWindow::closeProgrammFile()
 {
     ui->pathOfProgramm->clear();
     ui->pathOfProgramm->setText("Path...");
+    ui->pathOfProgramm->setToolTip("Empty file path");
     ui->ProgrammCNC->clear();
     ui->textBrowser->clear();
     codeFileType = NO_FILE;
+    ui->RunButton->setEnabled(FALSE);
 }
 
 //+++++++++++++[Процедура вывода данных в консоль]++++++++++++++++++++++++++++++++++++++++
@@ -668,7 +671,7 @@ void MainWindow::on_CheckCodeButton_clicked()
 
     if (codeFileType == GCODE_F)
     {
-gcodeparsing(strList.at(currentLine));
+//gcodeparsing(strList.at(currentLine));
     }
 }
 
@@ -721,7 +724,11 @@ void MainWindow::on_AddCodeButton_clicked()
     //here must be check for wrong type
     // writeData(temp);
 
+
+
     QByteArray data; // Текстовая переменная
+    gcodeparsing("1");
+
     data = ui->CodeLineEdit->text().toLocal8Bit() + '\r'; // Присвоение "data" значения из EnterText
     writeData(data); // Отправка данных в порт
     Print(data); // Вывод данных в консоль

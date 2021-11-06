@@ -181,7 +181,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Управляющая программа</string>
+     <string>Execution file</string>
     </property>
     <widget class="QTextBrowser" name="ProgrammCNC">
      <property name="geometry">
@@ -200,37 +200,6 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#55aaff;&quot;&gt;G-коды непосредственного управления рабочим органом.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;G00&lt;/span&gt; - ускоренное перемещение каретки.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;G01&lt;/span&gt; - перемещение со скоростью подачи (линейная интерполяция). Эта и предыдущая комманда должны быть единственными в кадре!&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;G04&lt;/span&gt; - задержка в миллисекундах.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;G30&lt;/span&gt; - поднятие каретки по оси Z на точку смены инструмента.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#55aaff;&quot;&gt;M-коды вспомогательных действий.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;М03&lt;/span&gt; - прямое вращение шпинделя – шпиндель вращается по часовой стрелке.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;М04&lt;/span&gt; - обратное вращение шпинделя – шпиндель вращается против часовой стрелки.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;М05&lt;/span&gt; - останов шпинделя.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;M08&lt;/span&gt; - включение подачи охлаждающей жидкости.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;M09&lt;/span&gt; - выключение подачи охлаждающей жидкости.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;M10&lt;/span&gt; - включение обдува места фрезерования.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;M11&lt;/span&gt; - выключение обдува места фрезерования.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;M12&lt;/span&gt; - включение освещения места фрезерования.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;M13&lt;/span&gt; - выключение освещения места фрезерования.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
@@ -244,13 +213,16 @@ p, li { white-space: pre-wrap; }
       </rect>
      </property>
      <property name="toolTip">
-      <string>File path</string>
+      <string>Empty file path</string>
      </property>
      <property name="text">
       <string>Path...</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="margin">
+      <number>0</number>
      </property>
      <property name="textInteractionFlags">
       <set>Qt::TextEditable|Qt::TextSelectableByMouse</set>
@@ -350,7 +322,7 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>10</x>
        <y>360</y>
-       <width>91</width>
+       <width>141</width>
        <height>17</height>
       </rect>
      </property>
@@ -358,7 +330,7 @@ p, li { white-space: pre-wrap; }
       <string>Manual input switch</string>
      </property>
      <property name="text">
-      <string>Ручной ввод</string>
+      <string>Manual input G-code</string>
      </property>
      <property name="checked">
       <bool>false</bool>
@@ -683,7 +655,7 @@ p, li { white-space: pre-wrap; }
       </rect>
      </property>
      <property name="text">
-      <string>На расстояние</string>
+      <string>To lenght</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButtonToSteps">
@@ -696,7 +668,7 @@ p, li { white-space: pre-wrap; }
       </rect>
      </property>
      <property name="text">
-      <string>На шаги</string>
+      <string>To steps</string>
      </property>
     </widget>
     <widget class="QSpinBox" name="spinBoxStepsValue">
@@ -835,7 +807,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
     <property name="title">
-     <string>Shpindle</string>
+     <string>Shpindle rpm</string>
     </property>
     <widget class="QSlider" name="SliderToSetShpindleSpeed">
      <property name="geometry">
@@ -884,7 +856,7 @@ p, li { white-space: pre-wrap; }
        <string>Now</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;682&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;10000&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1712,8 +1684,8 @@ p, li { white-space: pre-wrap; }
       <string>Open</string>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>:/pic/new_document.svg</normaloff>:/pic/new_document.svg</iconset>
+      <iconset resource="images.qrc">
+       <normaloff>:/menuBar/pic/openFile.svg</normaloff>:/menuBar/pic/openFile.svg</iconset>
      </property>
      <addaction name="actionExcellon"/>
      <addaction name="actionGerber_RS247X"/>
@@ -1769,14 +1741,18 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionAutors">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/menuBar/pic/autors.svg</normaloff>:/menuBar/pic/autors.svg</iconset>
+   </property>
    <property name="text">
     <string>Autors</string>
    </property>
   </action>
   <action name="menuSettings">
    <property name="icon">
-    <iconset>
-     <normaloff>C:/Users/veres/Desktop/img/litle_img/settings1.png</normaloff>C:/Users/veres/Desktop/img/litle_img/settings1.png</iconset>
+    <iconset resource="images.qrc">
+     <normaloff>:/menuBar/pic/settings.svg</normaloff>:/menuBar/pic/settings.svg</iconset>
    </property>
    <property name="text">
     <string>Settings</string>
@@ -1825,13 +1801,19 @@ p, li { white-space: pre-wrap; }
    </property>
   </action>
   <action name="actionGcode">
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/menuBar/pic/GcodeFiletype.svg</normaloff>:/menuBar/pic/GcodeFiletype.svg</iconset>
+   </property>
    <property name="text">
     <string>G-code</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>SliderToSetShpindleSpeed</sender>
