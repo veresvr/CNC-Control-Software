@@ -1,7 +1,18 @@
 #include <QObject>
+#include <stdint.h>
+#include <veres_defines_list.h>
+
+//#define OUT_DATA_LENGTH  20;
 
 
-uint8_t excellonparsing(QString str);
-uint8_t dxfparsing();
-uint8_t gcodeparsing(QString str);
+
+typedef struct returnCommand {
+    uint8_t StatusOfParsing;
+    QByteArray data[5];                     // number of data rows
+    uint8_t numberOfLines;
+};
+
+returnCommand excellonparsing(QString str);
+returnCommand dxfparsing();
+returnCommand gcodeparsing(QString str);
 

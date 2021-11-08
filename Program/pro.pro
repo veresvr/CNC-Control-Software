@@ -24,6 +24,7 @@ HEADERS  += mainwindow.h \
     filesparsing.h \
     port.h \
     settingscom.h \
+    veres_defines_list.h \
     firmware.h
 
 FORMS    += mainwindow.ui \

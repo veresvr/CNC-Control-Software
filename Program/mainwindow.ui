@@ -1482,10 +1482,13 @@ p, li { white-space: pre-wrap; }
       <bool>false</bool>
      </property>
      <property name="text">
-      <string>1000.225</string>
+      <string>NO DATA</string>
      </property>
      <property name="frame">
       <bool>true</bool>
+     </property>
+     <property name="cursorPosition">
+      <number>7</number>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

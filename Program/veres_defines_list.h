@@ -1,6 +1,8 @@
 /*			discription:
     List of errors, which cnc freeze return to PC.
 */
+
+
 // errors
 #define OK              			0
 //#define NO_ERROR	      			0
@@ -50,4 +52,9 @@
 #define GOTO_Y_MINUS                            6
 #define GOTO_Z_PLUS                             7
 #define GOTO_Z_MINUS                            8
+
+// parsing errors
+#define SUCCESS            			0
+#define UNKNOWN_ERROR      			1
+
 
