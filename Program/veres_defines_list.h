@@ -1,8 +1,6 @@
 /*			discription:
     List of errors, which cnc freeze return to PC.
 */
-
-
 // errors
 #define OK              			0
 //#define NO_ERROR	      			0
@@ -40,7 +38,7 @@
 #define MOV_CARRIAGE_AT_Z_WORK 51
 #define SHPINDLE_MODE					26
 #define GOTO_COMMAND                            52
-#define END_SENSORS_STATUS		53
+#define END_SONSORS_STATUS		53
 
 // GOTO variants
 #define NONE                                    0
@@ -53,8 +51,34 @@
 #define GOTO_Z_PLUS                             7
 #define GOTO_Z_MINUS                            8
 
-// parsing errors
-#define SUCCESS            			0
-#define UNKNOWN_ERROR      			1
+#define REPETITION_VALUE_MAX	255
+
+// INSTRUCTION variants:
+#define GET_END_SENSORS_STATUS						101				// ASCII e
+#define SET_LOCAL_COORDINATES_TO_ZERO			98				// ASCII b
+#define ACKNOWLEDGE												6					// ASCII control character
+#define NEGATIVE_ACKNOWLEDGE							21				// ASCII control character
+#define MAKE_BELL													7					// ASCII control character
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -31,7 +31,7 @@
 
 
 // global variables
-QString versionOfProgramm = "0.0x pre-a";     // curennt version at this time
+QString versionOfProgramm = "0.0x";     // curennt version at this time
 uint32_t shpindleSpeedMAX = 1000;
 uint8_t codeFileType = NO_FILE;       // 255 different types of files can load
 
@@ -169,7 +169,13 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionToolTip, SIGNAL(triggered(bool)), this, SLOT(toolTipChange()));
     connect(form, SIGNAL(saveAndApplySettingsInForm()), this, SLOT(settingsChangedInForm()));
 
-
+    // here we set the default statuses for end sensors (green - OK, red - not OK)
+    ui->label_EndStatusXPlus->setStyleSheet("QLabel { color : green; }");
+    ui->label_EndStatusYPlus->setStyleSheet("QLabel { color : green; }");
+    ui->label_EndStatusZPlus->setStyleSheet("QLabel { color : green; }");
+    ui->label_EndStatusXMinus->setStyleSheet("QLabel { color : green; }");
+    ui->label_EndStatusYMinus->setStyleSheet("QLabel { color : green; }");
+    ui->label_EndStatusZMinus->setStyleSheet("QLabel { color : green; }");
 
     thread_New->start();
 
@@ -769,4 +775,45 @@ void MainWindow::on_toPositiveAxisX_clicked()
         qDebug("OK");
     }else qDebug("error: value too much high");
 }
+
+void MainWindow::analyzeIncomingData()
+{
+    QByteArray receive_array;
+
+    if (receive_array.indexOf(GET_END_SENSORS_STATUS, INSTRUCTION)){
+        qDebug("GET_END_SENSORS_STATUS");
+        uint8_t data = receive_array[DATA];
+
+        if(data & 1<<0) ui->label_EndStatusXPlus->setStyleSheet("QLabel { color : red; }");
+            else ui->label_EndStatusXPlus->setStyleSheet("QLabel { color : green; }");
+
+        if(data & 1<<1) ui->label_EndStatusXMinus->setStyleSheet("QLabel { color : red; }");
+            else ui->label_EndStatusXMinus->setStyleSheet("QLabel { color : green; }");
+
+        if(data & 1<<2) ui->label_EndStatusYPlus->setStyleSheet("QLabel { color : red; }");
+            else ui->label_EndStatusYPlus->setStyleSheet("QLabel { color : green; }");
+
+        if(data & 1<<3) ui->label_EndStatusYMinus->setStyleSheet("QLabel { color : red; }");
+            else ui->label_EndStatusYMinus->setStyleSheet("QLabel { color : green; }");
+
+        if(data & 1<<4) ui->label_EndStatusZPlus->setStyleSheet("QLabel { color : red; }");
+            else ui->label_EndStatusZPlus->setStyleSheet("QLabel { color : green; }");
+
+        if(data & 1<<5) ui->label_EndStatusZMinus->setStyleSheet("QLabel { color : red; }");
+            else ui->label_EndStatusZMinus->setStyleSheet("QLabel { color : green; }");
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 

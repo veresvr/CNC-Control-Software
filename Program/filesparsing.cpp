@@ -1,9 +1,9 @@
 #include "filesparsing.h"
 
 
-returnCommand excellonparsing(QString str)
+returnCommandType excellonparsing(QString str)
 {
-    returnCommand ExcellonCommand;
+    returnCommandType ExcellonCommand;
     uint8_t startSymbol = 0;
     double  axisValueX = 0,
             axisValueY = 0,
@@ -69,9 +69,9 @@ returnCommand excellonparsing(QString str)
 }
 
 //-------------------------------------------------------------------------------
-returnCommand dxfparsing()
+returnCommandType dxfparsing()
 {
-    returnCommand DXFCommand;
+    returnCommandType DXFCommand;
 
 
 
@@ -90,9 +90,9 @@ returnCommand dxfparsing()
 }
 
 //-------------------------------------------------------------------------------
-returnCommand gcodeparsing(QString str)
+returnCommandType gcodeparsing(QString str)
 {
-    returnCommand GCodeCommand;
+    returnCommandType GCodeCommand;
 
 
     GCodeCommand.StatusOfParsing = SUCCESS;

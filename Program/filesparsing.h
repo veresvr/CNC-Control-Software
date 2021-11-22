@@ -6,13 +6,13 @@
 
 
 
-typedef struct returnCommand {
+typedef struct returnCommandType {
     uint8_t StatusOfParsing;
     QByteArray data[5];                     // number of data rows
     uint8_t numberOfLines;
 };
 
-returnCommand excellonparsing(QString str);
-returnCommand dxfparsing();
-returnCommand gcodeparsing(QString str);
+returnCommandType excellonparsing(QString str);
+returnCommandType dxfparsing();
+returnCommandType gcodeparsing(QString str);
 

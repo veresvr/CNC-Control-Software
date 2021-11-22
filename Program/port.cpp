@@ -64,7 +64,7 @@ void  Port::DisconnectPort(){
         error_(SettingsPort.name.toLocal8Bit() + " >> Закрыт!\r");
     }
 }
-//ot tuta kovuratji!!!
+
 void Port :: WriteToPort(QByteArray data){
     if(thisPort.isOpen()){
         thisPort.write(data);
